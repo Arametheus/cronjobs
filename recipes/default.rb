@@ -8,6 +8,7 @@
 
 node[:custom_env][:cron_jobs].each do |cron_values|
   cron "#{cron_values[:name]}" do
+    user    "#{cron_values[:user]}"
     minute  "#{cron_values[:minute]}"
     hour    "#{cron_values[:hour]}"
     day     "#{cron_values[:day]}"
